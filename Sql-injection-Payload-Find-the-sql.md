@@ -8,8 +8,8 @@
 * [SQL注入身份验证绕过有效负载](#SQL注入身份验证绕过有效负载)
 
 ## 通用SQL注入负载
+```
 '
-
 ''
 `
 ``
@@ -44,7 +44,7 @@
 @variable  local variable
 @@variable  global variable
 
-
+```
 ## Numeric
 AND 1
 AND 0
