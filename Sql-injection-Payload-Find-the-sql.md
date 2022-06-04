@@ -91,7 +91,7 @@ Time-Based:
 
 Comments:
 
-\#      Hash comment
+#     Hash comment
 /*    C-style comment
 -- -  SQL comment
 ;%00  Nullbyte
