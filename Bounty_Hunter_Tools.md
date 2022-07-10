@@ -152,6 +152,7 @@ CorsMe - 跨域资源共享错误配置扫描器
 crlfuzz — 一个快速扫描用 Go 编写的 CRLF 漏洞的工具
 CRLF-Injection-Scanner — 用于在域列表上测试 CRLF 注入的命令行工具。
 Injectus 1 - CRLF 和开放重定向模糊器
+CRLFsuite - 一款专为扫描而设计的快速工具CRLF injection
 ```
 ## CSRF_注入
 ```
