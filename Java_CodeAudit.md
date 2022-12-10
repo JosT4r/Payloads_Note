@@ -11,8 +11,10 @@ exp:
     Class name = Class.forName("java.lang.Runtime");
 ```
 2. 直接获取:  
+```
 exp:  
-        Class<?> name = Runtime.class;
+    Class<?> name = Runtime.class;
+```
 3. 使用getClass()方法:  
 ```
 exp:  
