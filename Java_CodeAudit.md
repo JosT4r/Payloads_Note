@@ -1,6 +1,6 @@
 # Java CodeAudit Study Notes
 # Java EE 基础知识
-# 1  java反射机制
+# 1.  java反射机制
 ```
 java反射机制可以无视类方法、变量去访问权限修饰符(如protected、private等)，并且可以调用任何类的任意方法、访问并修改成员变量值。
 ```
@@ -95,3 +95,4 @@ URLClassLoader类是ClassLoader的一个实现，拥有从远程服务器上加�
 ```
 Java 代理的方式有3种：静态代理、动态代理和CGLib代理。
 ```
+
