@@ -1,4 +1,5 @@
-# Java CodeAudit
+# Java CodeAudit Study Notes
+# Java EE 基础知识
 # 1  java反射机制
 ```
 java反射机制可以无视类方法、变量去访问权限修饰符(如protected、private等)，并且可以调用任何类的任意方法、访问并修改成员变量值。
