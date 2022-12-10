@@ -4,8 +4,8 @@ java反射机制可以无视类方法、变量去访问权限修饰符(如protec
 ## 反射的基本运用
 ### 获取类对象
 1. 使用forName()方法:
-    exp:
-        Class name = Class.forName("java.lang.Runtime");
+exp:
+    Class name = Class.forName("java.lang.Runtime");
 2. 直接获取:
     exp:
         Class<?> name = Runtime.class;
