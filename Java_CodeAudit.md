@@ -14,7 +14,7 @@ exp:
     Runtime rt = Runtime.GetRuntime();  
     Class<?> name =rt.getClass();
 4. 使用getSystemClassLoader().loadClass()方法:  
-exp:
+exp:  
         Class<?> name = ClassLoader.getSystemClassLoader().loadClass("java.lang.Runtime");
 **以上四种example输出的name都为 Class java.lang.Runtime**
 ### 1.1.2 获取类方法
