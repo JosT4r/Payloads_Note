@@ -96,3 +96,36 @@ URLClassLoader类是ClassLoader的一个实现，拥有从远程服务器上加�
 Java 代理的方式有3种：静态代理、动态代理和CGLib代理。
 ```
 
+
+# OWASP Top 10 漏洞的代码审计
+##  1. 注入
+### 1.1 SQL注入
+1. JDBC拼接不当造成sql注入  
+```
+JDBC有两种方法执行SQL语句，分别为PrepareStatement和Statement。两个方法的区别在于PrepareStatement会对SQL语句进行预编译，而Statement方法在每次执行时都需要编译。
+```
+2. 框架使用不当造成SQL注入  
+```
+(1) MyBatis 框架:
+    MyBatis中使用 parameterType 向 SQL 语句传参，在SQL引用传参可以使用 #{Parameter} 和 ${Parameter} 两种方式。
+    #{Parameter} 采用预编译的方式构造 SQL。
+    ${Parameter} 采用拼接的方式构造 SQl。
+(2) Hibernate 框架:
+    也是分为预编译和直接拼接两种。
+```
+### 1.2 命令注入
+```
+系统命令支持使用连接符来执行多条语句，常见的连接符有"|"、"||"、"&"、"&&"。对于JAVA环境中的命令注入，连接符的使用存在一些局限。
+利用条件:
+    1.若命令参数完全可控，可以注入任意命令执行（ProcessBuilder只能执行无参命令）
+    exp:
+        String command = request.getParameter("command");
+        Process process = Runtime.getRuntime().exec(command);
+    2.不存在创建shell，无法结合;、&&等特殊符号进行命令注入
+    3.存在创建shell
+        存在参数注入，可以进行命令注入（例如可控点在-c传入的参数命令后）
+    exp:
+        String filename = request.getParameter("filename");
+        Process process = Runtime.getRuntime().exec("sh -c ./shell/"+filename);
+```
+**ProcessBuilder()和Runtime.getRuntime.exec()本质上一样。**
